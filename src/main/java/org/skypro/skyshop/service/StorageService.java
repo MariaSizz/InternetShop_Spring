@@ -28,8 +28,8 @@ public class StorageService {
 
     public Collection<Searchable> getAllSearchables() {
         List<Searchable> all = new ArrayList<>();
-        all.addAll(products.values()); // Добавляем все продукты
-        all.addAll(articles.values()); // Добавляем все статьи
+        all.addAll(products.values());
+        all.addAll(articles.values());
         return all;
     }
 
