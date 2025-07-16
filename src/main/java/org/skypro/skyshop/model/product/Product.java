@@ -34,13 +34,13 @@ public abstract class Product implements Searchable {
     }
 
     @Override
-    @JsonIgnore // убрать поле из ответ для веба
+    @JsonIgnore
     public String getSearchTerm() {
         return name;
     }
 
     @Override
-    @JsonIgnore // убрать поле из ответ для веба
+    @JsonIgnore
     public String getContentType() {
         return "PRODUCT";
     }

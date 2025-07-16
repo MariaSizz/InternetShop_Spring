@@ -30,7 +30,7 @@ public class Article implements Searchable {
         return id;
     }
 
-    @JsonIgnore
+    @JsonIgnore // убрать поле из ответ для веба
     @Override
     public String getSearchTerm() {
         return toString();

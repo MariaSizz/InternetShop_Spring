@@ -28,16 +28,23 @@ public class StorageService {
 
     public Collection<Searchable> getAllSearchables() {
         List<Searchable> all = new ArrayList<>();
-        all.addAll(products.values()); // Добавляем все продукты
-        all.addAll(articles.values()); // Добавляем все статьи
+        all.addAll(products.values());
+        all.addAll(articles.values());
         return all;
     }
 
-    private void initData() {
-        products.put(UUID.randomUUID(), new SimpleProduct(UUID.randomUUID(), "Телефон", 15000));
-        products.put(UUID.randomUUID(), new DiscountProduct(UUID.randomUUID(), "Ноутбук", 50000, 10));
+    public Optional<Product> getProductById(UUID id) {
+        return Optional.ofNullable(products.get(id));
+    }
 
-        articles.put(UUID.randomUUID(), new Article(UUID.randomUUID(), "Обзор телефона", "Телефон имеет отличную камеру."));
-        articles.put(UUID.randomUUID(), new Article(UUID.randomUUID(), "Как выбрать ноутбук", "Ноутбук должен быть мощным."));
+    private void initData() {
+        UUID id1 = UUID.randomUUID();
+        UUID id2 = UUID.randomUUID();
+        UUID id3 = UUID.randomUUID();
+        UUID id4 = UUID.randomUUID();
+        products.put(id1, new SimpleProduct(id1, "Телефон", 15000));
+        products.put(id2, new DiscountProduct(id2, "Ноутбук", 50000, 10));
+        articles.put(id3, new Article(id3, "Обзор телефона", "Телефон имеет отличную камеру."));
+        articles.put(id4, new Article(id4, "Как выбрать ноутбук", "Ноутбук должен быть мощным."));
     }
 }

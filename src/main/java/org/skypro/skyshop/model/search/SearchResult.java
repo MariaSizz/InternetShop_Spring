@@ -1,6 +1,5 @@
 package org.skypro.skyshop.model.search;
 
-
 public class SearchResult {
     private final String id;
     private final String name;
@@ -12,7 +11,7 @@ public class SearchResult {
         this.contentType = contentType;
     }
 
-    public static SearchResult fromSearchable(Searchable searchable) {
+    public static SearchResult fromSearchable(org.skypro.skyshop.model.search.Searchable searchable) {
         return new SearchResult(searchable.getId().toString(), searchable.getName(), searchable.getContentType());
     }
 
